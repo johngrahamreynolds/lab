@@ -1,0 +1,22 @@
+---
+title: "lab"
+subtitle: "Agent runtimes, RL environments, training, and what breaks when the loop closes on itself."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: [date, title]
+  filter-ui: true
+  fields: [date, title, description, categories, reading-time]
+  feed: true
+page-layout: full
+title-block-banner: false
+---
+
+Working notes from a personal research lab. Entries are dated, tagged by
+[pillar](about.qmd), and — where a claim has a number attached — backed by code
+that reruns.
+
+Projects described here live in their own repositories; entries link to the
+commit or release they describe.

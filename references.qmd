@@ -1,0 +1,132 @@
+---
+title: "References"
+description: "Running registry of papers, repos, announcements, and open questions."
+toc-depth: 2
+---
+
+
+Running registry for the personal research lab. Append-only in spirit; prune quarterly.
+
+**Conventions**
+
+- Every entry gets a pillar tag: `[R]` runtime/harness, `[E]` environments/verification, `[T]` training/optimization, `[M]` meta/RSI.
+- Every entry gets a status: `queued` / `read` / `used` / `contributed`.
+- If an entry drives a notebook post, link the post slug next to it. An entry that never earns a link after two quarters gets pruned.
+- Dates are the date *I* added it, not the publication date.
+
+---
+
+## 1. Papers
+
+| Paper | Tag | Status | Notes |
+|---|---|---|---|
+| Catastrophic forgetting in fine-tuned language models — [arXiv:2512.13706](https://arxiv.org/abs/2512.13706) (own, first author) | T, M | used | The load-bearing prior for the RSI-forgetting synthesis piece |
+| INTELLECT-3 Technical Report — [arXiv:2512.16144](https://arxiv.org/pdf/2512.16144) | E, T | queued | Best single description of the verifiers → prime-rl → Environments Hub pipeline in practice; see the EnvGroup multi-environment pattern |
+| Sutton & Barto, *Reinforcement Learning: An Introduction* | T | used | Ongoing; MC methods, policy/value iteration, function approximation |
+| AlphaZero / MuZero lineage (original papers) | T | queued | Thesis backbone — re-read with an eye to environment interface, not just algorithm |
+| AlphaProof / formal math agents | M | queued | Lean + search; connects to LLM-assisted formal verification for flight software |
+| Terminal-Bench 2 / agentic harness evaluation literature | E | queued | Reference point for Annulus eval harness design |
+
+*To add as read: GRPO / RLOO / RLVR primary sources; DSPy + GEPA (Hermes self-evolution); open-ended discovery literature behind EinsteinArena.*
+
+---
+
+## 2. Repos & tools
+
+### Runtime / harness `[R]`
+
+- **Annulus** (own) — local-first agentic platform; MVP is SWE, roadmap is MCP + GraphRAG + science/engineering platform.
+- [karpathy/autoresearch](https://github.com/karpathy/autoresearch) — minimal autonomous research loop. Study-and-fork target; closest public analogue to Annulus's second act.
+- [NousResearch/hermes-agent](https://github.com/nousresearch) — reference architecture: skills-as-procedural-memory, MCP, subagent delegation, programmatic tool calling, trajectory export.
+- [NousResearch/hermes-agent-self-evolution](https://github.com/nousresearch) — DSPy + GEPA evolutionary optimization of skills/prompts/code. Directly relevant to `[M]`.
+- [0xNyk/awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent) — community directory; useful map of the plugin/skill ecosystem.
+- Claude Code — terminal, repo-scale analysis and architecture. Skills are cross-agent portable (agentskills.io standard).
+- Cursor (Composer 2.5) — inline diffs + ADR review. Current daily driver.
+
+### Environments / verification `[E]`
+
+- [PrimeIntellect-ai/verifiers](https://github.com/PrimeIntellect-ai/verifiers) — v1 (July 10, 2026) decomposes into tasksets / harnesses / runtimes. Dialect adapters for OpenAI Chat Completions, OpenAI Responses, Anthropic Messages.
+- [Environments Hub](https://hub.primeintellect.ai) — 2,500+ environments, doubles as a Python package registry (wheels + `pyproject.toml`).
+- [PrimeIntellect-ai/prime-cli](https://github.com/PrimeIntellect-ai/prime-cli) — install/upload/manage environments.
+- [PrimeIntellect-ai/prime-environments](https://github.com/PrimeIntellect-ai/prime-environments) — where RFCs and bounties land.
+- Harbor (fully supported third-party format in verifiers v1); NeMo Gym and OpenEnv in alpha.
+
+### Training / optimization `[T]`
+
+- [PrimeIntellect-ai/prime-rl](https://github.com/PrimeIntellect-ai/prime-rl) — FSDP, SFT + RL + evals, Slurm/K8s multi-node, VLM support.
+- [Hugging Face TRL](https://github.com/huggingface/trl) — local GRPO baseline; the "no managed infra" leg of the three-stack comparison.
+- [Tinker](https://thinkingmachines.ai/tinker/) + [tinker-cookbook](https://github.com/thinking-machines-lab/tinker-cookbook) — GA since Dec 12, 2025. Primitives: `forward_backward`, `optim_step`, `save_state`, `sample`. LoRA-based. Checkpoint download supported.
+- [NousResearch/atropos](https://github.com/nousresearch) — RL environments framework for LLM trajectories.
+- **tinker-atropos** (Nous) — standalone Atropos ↔ Tinker integration; RL on real agent trajectories. The literal seam between the runtime and training pillars.
+
+### Meta / RSI `[M]`
+
+- OpenEvolve and similar open AlphaEvolve reproductions — evolutionary program search over a verifier.
+- DSPy / GEPA — prompt and program optimization.
+
+---
+
+## 3. Product announcements & lab blogs
+
+| Item | Date | Why it matters |
+|---|---|---|
+| [Tinker: General Availability and Vision Input](https://thinkingmachines.ai/news/tinker-general-availability/) | 2025-12-12 | Waitlist removed; Kimi K2 Thinking; OpenAI-compatible inference interface |
+| [Announcing Tinker](https://thinkingmachines.ai/news/announcing-tinker/) | 2025-10-01 | Original design rationale — read for the API philosophy, not the status |
+| [Environments Hub launch](https://www.primeintellect.ai/blog/environments) | — | Community platform rationale + RFC/bounty model |
+| verifiers v1: Decomposing Tasksets and Harnesses | 2026-07-10 | The current spec. Migration surface = contribution opportunity |
+| prime-rl gets an Algorithms layer | 2026-07-05 | — |
+| RL at 1T Scale: prime-rl Performance Deep Dive | 2026-06-21 | — |
+| [Hyra-1.0](https://hy.tencent.com/research/hyra) (Tencent Hunyuan) | 2026-07-21 | Recursively self-improving agent for research/engineering. Its framing section is the best available map of the RSI frontier |
+| [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) | — | 4×4 complex matrix multiply in 48 scalar multiplications |
+| [AlphaProof / IMO silver medal](https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/) | — | Formal math agent; Lean |
+| [EinsteinArena](https://www.together.ai/blog/einsteinarena) (Together AI) | — | Open-ended multi-agent discovery; 11-dim kissing number lower bound 593 → 604 |
+
+---
+
+## 4. People & orgs to follow
+
+- Will Brown (`@willccbb`) — verifiers author; Prime Intellect.
+- Prime Intellect team (Will, Johannes named as RFC contacts).
+- Thinking Machines — Tinker on X posts weekly community project roundups.
+- Nous Research — Discord is the active channel for Hermes/Atropos.
+- Andrej Karpathy — autoresearch.
+- Peter Stone, Philipp Krähenbühl (UT) — thesis supervision track.
+
+---
+
+## 5. Benchmarks & evals
+
+- SWE-bench Verified, Terminal-Bench 2 — Annulus eval targets.
+- BrowseComp, DeepSearchQA — agentic search reference numbers.
+- GPQA Diamond, HLE-with-tools, IMOAnswerBench, USAMO — science/math agent reference numbers.
+- Tesseract: own Elo ladder vs. random / greedy / MCTS-only / human baselines. **Define this before writing any training code.**
+
+*Note: vendor-reported benchmark numbers are self-reported until an independent evaluator publishes. Record the source of every number cited in a notebook post.*
+
+---
+
+## 6. Open questions
+
+Living list. Each one is a candidate notebook post or thesis discussion section.
+
+1. Does an LLM fine-tuned with RLVR on Tesseract approach the self-play agent's play strength, or plateau? Where exactly?
+2. Can the AlphaZero-lineage agent serve as opponent *and* evaluator in an LLM RL loop for the same game?
+3. What does the forgetting literature say about weight-updating self-improvement loops? Is forgetting the actual binding constraint on RSI, and does that argue for skills/memory-based improvement over weight updates?
+4. What do Tinker's primitives buy over TRL's trainers that is not just convenience — and where does the abstraction leak?
+5. Which of Hermes's architectural choices (memory model, skills spec, security boundary) should Annulus adopt, and which are wrong for a local-first NASA context?
+6. Where does evolutionary program search stop working — what problem structure does AlphaEvolve-style search require?
+
+---
+
+## 7. Contribution targets
+
+- Environments Hub RFCs and bounties (`prime-environments` issues).
+- verifiers v1 migration docs and rough edges — best window is now, right after the refactor.
+- tinker-cookbook examples.
+- Annulus itself (own repo, but track external issues/PRs separately).
+
+**Contribution log**
+
+| Date | Project | What | Outcome |
+|---|---|---|---|
+| | | | |

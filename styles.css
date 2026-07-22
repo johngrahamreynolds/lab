@@ -1,0 +1,6 @@
+/* Slightly wider measure and calmer code blocks than the theme default. */
+.quarto-title-block .description { font-size: 1.05rem; opacity: 0.85; }
+main { max-width: 68ch; }
+.quarto-listing { max-width: none; }
+pre.sourceCode { border-radius: 6px; font-size: 0.86rem; }
+.callout { border-radius: 6px; }

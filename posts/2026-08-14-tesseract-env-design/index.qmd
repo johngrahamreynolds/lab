@@ -1,0 +1,96 @@
+---
+title: "Tesseract as a verifiers environment: design notes"
+description: "Observation and action encoding, reward rubric, and why this taskset shape."
+date: 2026-08-14
+categories: [E, tesseract, verifiers]
+draft: true
+format:
+  html: default
+  # Uncomment to also build a PDF of this single entry:
+  # pdf:
+  #   documentclass: article
+  #   geometry: margin=1in
+bibliography: ../../references.bib
+---
+
+## Why
+
+One paragraph on what question this entry answers. Link the repo and the exact
+commit or release this describes.
+
+::: {.callout-note}
+Companion code: [`tesseract-env@abc1234`](https://github.com/johngrahamreynolds/tesseract-env)
+:::
+
+## Formalism
+
+Math renders natively, which matters for the POMDP and search formalism. The
+PUCT selection rule used in the self-play agent:
+
+$$
+a_t = \arg\max_a \left[ Q(s_t, a) + c_{\text{puct}} \, P(s_t, a)
+\frac{\sqrt{\sum_b N(s_t, b)}}{1 + N(s_t, a)} \right]
+$$ {#eq-puct}
+
+Reference it later as @eq-puct.
+
+## Encoding
+
+```{python}
+#| label: fig-reward
+#| fig-cap: "Reward shaping over episode length. Replace with real data."
+#| code-fold: true
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+steps = np.arange(0, 200)
+dense = 1 - np.exp(-steps / 60)
+sparse = (steps > 150).astype(float)
+
+fig, ax = plt.subplots(figsize=(6, 3.2))
+ax.plot(steps, dense, label="shaped")
+ax.plot(steps, sparse, label="terminal only", linestyle="--")
+ax.set_xlabel("step")
+ax.set_ylabel("cumulative reward")
+ax.legend(frameon=False)
+ax.spines[["top", "right"]].set_visible(False)
+plt.tight_layout()
+```
+
+@fig-reward is generated at render time and cached in `_freeze/`. CI never
+executes it.
+
+Tables print through `kable` automatically:
+
+```{python}
+#| label: tbl-baselines
+#| tbl-cap: "Baseline ladder. Fix these before writing training code."
+import pandas as pd
+pd.DataFrame({
+    "baseline": ["random", "greedy", "MCTS-only", "human (self)"],
+    "elo": [0, 0, 0, 0],
+    "games": [0, 0, 0, 0],
+})
+```
+
+## Architecture
+
+```{mermaid}
+%%| label: fig-arch
+%%| fig-cap: "Environment, harness, and trainer boundaries."
+flowchart LR
+    A[Taskset<br/>Tesseract states] --> B[Harness<br/>rollout policy]
+    B --> C[Runtime<br/>inference client]
+    C --> B
+    B --> D[Reward<br/>rubric]
+    D --> E[(prime-rl)]
+```
+
+## What broke
+
+The most valuable section. Be specific.
+
+## Next
+
+One or two concrete follow-ups, each a candidate entry.

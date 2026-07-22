@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    browser: false
+
+# Cache computation. CI renders from _freeze/ and never executes code.
+# Commit _freeze/ after every local render.
+execute:
+  freeze: auto
+
+website:
+  title: "lab"
+  description: "Personal research lab notebook — agent runtimes, RL environments, training, and self-improving systems."
+  site-url: "https://johngrahamreynolds.github.io/lab"
+  repo-url: "https://github.com/johngrahamreynolds/lab"
+  repo-actions: [source, issue]
+  open-graph: true
+  twitter-card: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Entries
+      - href: about.qmd
+        text: Scaffold
+      - href: ladder.qmd
+        text: Ladder
+      - href: references.qmd
+        text: References
+    right:
+      - icon: github
+        href: https://github.com/johngrahamreynolds
+        aria-label: GitHub
+  page-footer:
+    left: "Built with [Quarto](https://quarto.org)."
+    right: "Source on [GitHub](https://github.com/johngrahamreynolds/lab)."
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: true
+    code-link: true
+    highlight-style: github
+    fig-align: center
+    df-print: kable
+    citations-hover: true
+    link-external-newwindow: true
+
+bibliography: references.bib
+csl: https://www.zotero.org/styles/ieee

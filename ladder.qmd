@@ -1,0 +1,43 @@
+---
+title: "Ladder"
+description: "Skill ladder and contribution log."
+---
+
+## Rungs
+
+Each tool climbs four rungs. Only the last two count toward the portfolio.
+
+1. **Used** — ran the quickstart, understood the surface.
+2. **Shipped** — produced an artifact inside an anchor project.
+3. **Contributed** — merged PR, published environment, or filed an issue with a
+   reproduction.
+4. **Taught** — wrote something that explains a non-obvious thing about it.
+
+## Status
+
+| Tool | Pillar | Used | Shipped | Contributed | Taught |
+|---|---|:--:|:--:|:--:|:--:|
+| Cursor / Composer | R | ✅ | ✅ | | |
+| Claude Code | R | | | | |
+| MCP | R | | | | |
+| Hermes Agent (as reference) | R | | | | |
+| autoresearch | R, M | | | | |
+| `verifiers` | E | | | | |
+| Environments Hub / `prime-cli` | E | | | | |
+| TRL | T | | | | |
+| `prime-rl` | T | | | | |
+| Tinker | T | | | | |
+| Atropos / `tinker-atropos` | T, M | | | | |
+| Evolutionary program search | M | | | | |
+
+## Contribution log
+
+| Date | Project | Contribution | Link | Outcome |
+|---|---|---|---|---|
+| | | | | |
+
+## Open contribution targets
+
+- Environments Hub RFCs and bounties (`PrimeIntellect-ai/prime-environments`).
+- `verifiers` v1 migration docs and rough edges.
+- `tinker-cookbook` examples.
