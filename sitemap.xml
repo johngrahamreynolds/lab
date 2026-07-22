@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://johngrahamreynolds.github.io/lab/references.html</loc>
-    <lastmod>2026-07-22T16:39:33.310Z</lastmod>
-  </url>
-  <url>
     <loc>https://johngrahamreynolds.github.io/lab/index.html</loc>
-    <lastmod>2026-07-22T16:39:33.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://johngrahamreynolds.github.io/lab/ladder.html</loc>
-    <lastmod>2026-07-22T16:39:33.310Z</lastmod>
-  </url>
-  <url>
-    <loc>https://johngrahamreynolds.github.io/lab/SETUP.html</loc>
-    <lastmod>2026-07-22T16:39:33.308Z</lastmod>
+    <lastmod>2026-07-22T16:52:26.619Z</lastmod>
   </url>
   <url>
     <loc>https://johngrahamreynolds.github.io/lab/about.html</loc>
-    <lastmod>2026-07-22T16:39:33.309Z</lastmod>
+    <lastmod>2026-07-22T16:52:26.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://johngrahamreynolds.github.io/lab/ladder.html</loc>
+    <lastmod>2026-07-22T16:52:26.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://johngrahamreynolds.github.io/lab/SETUP.html</loc>
+    <lastmod>2026-07-22T16:52:26.618Z</lastmod>
+  </url>
+  <url>
+    <loc>https://johngrahamreynolds.github.io/lab/references.html</loc>
+    <lastmod>2026-07-22T16:52:26.619Z</lastmod>
   </url>
 </urlset>
