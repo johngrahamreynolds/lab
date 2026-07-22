@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Running registry for the personal research lab. Append-only in spirit; prune quarterly.\nConventions"
+  },
+  {
+    "objectID": "references.html#papers",
+    "href": "references.html#papers",
+    "title": "References",
+    "section": "1. Papers",
+    "text": "1. Papers\n\n\n\nPaper\nTag\nStatus\nNotes\n\n\n\n\nCatastrophic forgetting in fine-tuned language models — arXiv:2512.13706 (own, first author)\nT, M\nused\nThe load-bearing prior for the RSI-forgetting synthesis piece\n\n\nINTELLECT-3 Technical Report — arXiv:2512.16144\nE, T\nqueued\nBest single description of the verifiers → prime-rl → Environments Hub pipeline in practice; see the EnvGroup multi-environment pattern\n\n\nSutton & Barto, Reinforcement Learning: An Introduction\nT\nused\nOngoing; MC methods, policy/value iteration, function approximation\n\n\nAlphaZero / MuZero lineage (original papers)\nT\nqueued\nThesis backbone — re-read with an eye to environment interface, not just algorithm\n\n\nAlphaProof / formal math agents\nM\nqueued\nLean + search; connects to LLM-assisted formal verification for flight software\n\n\nTerminal-Bench 2 / agentic harness evaluation literature\nE\nqueued\nReference point for Annulus eval harness design\n\n\n\nTo add as read: GRPO / RLOO / RLVR primary sources; DSPy + GEPA (Hermes self-evolution); open-ended discovery literature behind EinsteinArena."
+  },
+  {
+    "objectID": "references.html#repos-tools",
+    "href": "references.html#repos-tools",
+    "title": "References",
+    "section": "2. Repos & tools",
+    "text": "2. Repos & tools\n\nRuntime / harness [R]\n\nAnnulus (own) — local-first agentic platform; MVP is SWE, roadmap is MCP + GraphRAG + science/engineering platform.\nkarpathy/autoresearch — minimal autonomous research loop. Study-and-fork target; closest public analogue to Annulus’s second act.\nNousResearch/hermes-agent — reference architecture: skills-as-procedural-memory, MCP, subagent delegation, programmatic tool calling, trajectory export.\nNousResearch/hermes-agent-self-evolution — DSPy + GEPA evolutionary optimization of skills/prompts/code. Directly relevant to [M].\n0xNyk/awesome-hermes-agent — community directory; useful map of the plugin/skill ecosystem.\nClaude Code — terminal, repo-scale analysis and architecture. Skills are cross-agent portable (agentskills.io standard).\nCursor (Composer 2.5) — inline diffs + ADR review. Current daily driver.\n\n\n\nEnvironments / verification [E]\n\nPrimeIntellect-ai/verifiers — v1 (July 10, 2026) decomposes into tasksets / harnesses / runtimes. Dialect adapters for OpenAI Chat Completions, OpenAI Responses, Anthropic Messages.\nEnvironments Hub — 2,500+ environments, doubles as a Python package registry (wheels + pyproject.toml).\nPrimeIntellect-ai/prime-cli — install/upload/manage environments.\nPrimeIntellect-ai/prime-environments — where RFCs and bounties land.\nHarbor (fully supported third-party format in verifiers v1); NeMo Gym and OpenEnv in alpha.\n\n\n\nTraining / optimization [T]\n\nPrimeIntellect-ai/prime-rl — FSDP, SFT + RL + evals, Slurm/K8s multi-node, VLM support.\nHugging Face TRL — local GRPO baseline; the “no managed infra” leg of the three-stack comparison.\nTinker + tinker-cookbook — GA since Dec 12, 2025. Primitives: forward_backward, optim_step, save_state, sample. LoRA-based. Checkpoint download supported.\nNousResearch/atropos — RL environments framework for LLM trajectories.\ntinker-atropos (Nous) — standalone Atropos ↔︎ Tinker integration; RL on real agent trajectories. The literal seam between the runtime and training pillars.\n\n\n\nMeta / RSI [M]\n\nOpenEvolve and similar open AlphaEvolve reproductions — evolutionary program search over a verifier.\nDSPy / GEPA — prompt and program optimization."
+  },
+  {
+    "objectID": "references.html#product-announcements-lab-blogs",
+    "href": "references.html#product-announcements-lab-blogs",
+    "title": "References",
+    "section": "3. Product announcements & lab blogs",
+    "text": "3. Product announcements & lab blogs\n\n\n\nItem\nDate\nWhy it matters\n\n\n\n\nTinker: General Availability and Vision Input\n2025-12-12\nWaitlist removed; Kimi K2 Thinking; OpenAI-compatible inference interface\n\n\nAnnouncing Tinker\n2025-10-01\nOriginal design rationale — read for the API philosophy, not the status\n\n\nEnvironments Hub launch\n—\nCommunity platform rationale + RFC/bounty model\n\n\nverifiers v1: Decomposing Tasksets and Harnesses\n2026-07-10\nThe current spec. Migration surface = contribution opportunity\n\n\nprime-rl gets an Algorithms layer\n2026-07-05\n—\n\n\nRL at 1T Scale: prime-rl Performance Deep Dive\n2026-06-21\n—\n\n\nHyra-1.0 (Tencent Hunyuan)\n2026-07-21\nRecursively self-improving agent for research/engineering. Its framing section is the best available map of the RSI frontier\n\n\nAlphaEvolve\n—\n4×4 complex matrix multiply in 48 scalar multiplications\n\n\nAlphaProof / IMO silver medal\n—\nFormal math agent; Lean\n\n\nEinsteinArena (Together AI)\n—\nOpen-ended multi-agent discovery; 11-dim kissing number lower bound 593 → 604"
+  },
+  {
+    "objectID": "references.html#people-orgs-to-follow",
+    "href": "references.html#people-orgs-to-follow",
+    "title": "References",
+    "section": "4. People & orgs to follow",
+    "text": "4. People & orgs to follow\n\nWill Brown (@willccbb) — verifiers author; Prime Intellect.\nPrime Intellect team (Will, Johannes named as RFC contacts).\nThinking Machines — Tinker on X posts weekly community project roundups.\nNous Research — Discord is the active channel for Hermes/Atropos.\nAndrej Karpathy — autoresearch.\nPeter Stone, Philipp Krähenbühl (UT) — thesis supervision track."
+  },
+  {
+    "objectID": "references.html#benchmarks-evals",
+    "href": "references.html#benchmarks-evals",
+    "title": "References",
+    "section": "5. Benchmarks & evals",
+    "text": "5. Benchmarks & evals\n\nSWE-bench Verified, Terminal-Bench 2 — Annulus eval targets.\nBrowseComp, DeepSearchQA — agentic search reference numbers.\nGPQA Diamond, HLE-with-tools, IMOAnswerBench, USAMO — science/math agent reference numbers.\nTesseract: own Elo ladder vs. random / greedy / MCTS-only / human baselines. Define this before writing any training code.\n\nNote: vendor-reported benchmark numbers are self-reported until an independent evaluator publishes. Record the source of every number cited in a notebook post."
+  },
+  {
+    "objectID": "references.html#open-questions",
+    "href": "references.html#open-questions",
+    "title": "References",
+    "section": "6. Open questions",
+    "text": "6. Open questions\nLiving list. Each one is a candidate notebook post or thesis discussion section.\n\nDoes an LLM fine-tuned with RLVR on Tesseract approach the self-play agent’s play strength, or plateau? Where exactly?\nCan the AlphaZero-lineage agent serve as opponent and evaluator in an LLM RL loop for the same game?\nWhat does the forgetting literature say about weight-updating self-improvement loops? Is forgetting the actual binding constraint on RSI, and does that argue for skills/memory-based improvement over weight updates?\nWhat do Tinker’s primitives buy over TRL’s trainers that is not just convenience — and where does the abstraction leak?\nWhich of Hermes’s architectural choices (memory model, skills spec, security boundary) should Annulus adopt, and which are wrong for a local-first NASA context?\nWhere does evolutionary program search stop working — what problem structure does AlphaEvolve-style search require?"
+  },
+  {
+    "objectID": "references.html#contribution-targets",
+    "href": "references.html#contribution-targets",
+    "title": "References",
+    "section": "7. Contribution targets",
+    "text": "7. Contribution targets\n\nEnvironments Hub RFCs and bounties (prime-environments issues).\nverifiers v1 migration docs and rough edges — best window is now, right after the refactor.\ntinker-cookbook examples.\nAnnulus itself (own repo, but track external issues/PRs separately).\n\nContribution log\n\n\n\nDate\nProject\nWhat\nOutcome"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "lab",
+    "section": "",
+    "text": "Working notes from a personal research lab. Entries are dated, tagged by pillar, and — where a claim has a number attached — backed by code that reruns.\nProjects described here live in their own repositories; entries link to the commit or release they describe.\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "ladder.html",
+    "href": "ladder.html",
+    "title": "Ladder",
+    "section": "",
+    "text": "Each tool climbs four rungs. Only the last two count toward the portfolio.\n\nUsed — ran the quickstart, understood the surface.\nShipped — produced an artifact inside an anchor project.\nContributed — merged PR, published environment, or filed an issue with a reproduction.\nTaught — wrote something that explains a non-obvious thing about it."
+  },
+  {
+    "objectID": "ladder.html#rungs",
+    "href": "ladder.html#rungs",
+    "title": "Ladder",
+    "section": "",
+    "text": "Each tool climbs four rungs. Only the last two count toward the portfolio.\n\nUsed — ran the quickstart, understood the surface.\nShipped — produced an artifact inside an anchor project.\nContributed — merged PR, published environment, or filed an issue with a reproduction.\nTaught — wrote something that explains a non-obvious thing about it."
+  },
+  {
+    "objectID": "ladder.html#status",
+    "href": "ladder.html#status",
+    "title": "Ladder",
+    "section": "Status",
+    "text": "Status\n\n\n\nTool\nPillar\nUsed\nShipped\nContributed\nTaught\n\n\n\n\nCursor / Composer\nR\n✅\n✅\n\n\n\n\nClaude Code\nR\n\n\n\n\n\n\nMCP\nR\n\n\n\n\n\n\nHermes Agent (as reference)\nR\n\n\n\n\n\n\nautoresearch\nR, M\n\n\n\n\n\n\nverifiers\nE\n\n\n\n\n\n\nEnvironments Hub / prime-cli\nE\n\n\n\n\n\n\nTRL\nT\n\n\n\n\n\n\nprime-rl\nT\n\n\n\n\n\n\nTinker\nT\n\n\n\n\n\n\nAtropos / tinker-atropos\nT, M\n\n\n\n\n\n\nEvolutionary program search\nM"
+  },
+  {
+    "objectID": "ladder.html#contribution-log",
+    "href": "ladder.html#contribution-log",
+    "title": "Ladder",
+    "section": "Contribution log",
+    "text": "Contribution log\n\n\n\nDate\nProject\nContribution\nLink\nOutcome"
+  },
+  {
+    "objectID": "ladder.html#open-contribution-targets",
+    "href": "ladder.html#open-contribution-targets",
+    "title": "Ladder",
+    "section": "Open contribution targets",
+    "text": "Open contribution targets\n\nEnvironments Hub RFCs and bounties (PrimeIntellect-ai/prime-environments).\nverifiers v1 migration docs and rough edges.\ntinker-cookbook examples."
+  },
+  {
+    "objectID": "SETUP.html",
+    "href": "SETUP.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\n\nOne-time setup\n\nCreate an empty repo named lab on GitHub (no README, no .gitignore).\nUnpack this archive, then:\n\ncd lab\ngrep -rl johngrahamreynolds . | xargs sed -i '' 's/johngrahamreynolds/your-gh-handle/g'   # macOS\n# on Linux: grep -rl johngrahamreynolds . | xargs sed -i 's/johngrahamreynolds/your-gh-handle/g'\n\ngit init && git add -A && git commit -m \"scaffold lab notebook\"\ngit branch -M main\ngit remote add origin git@github.com:your-gh-handle/lab.git\ngit push -u origin main\n\nIn the repo: Settings → Pages → Source = “Deploy from a branch” → gh-pages / root. The first push creates the branch via the Actions workflow.\nLocally: quarto preview to write, quarto render then commit _freeze/ before pushing.\n\nThe template entry has draft: true, so it will not appear in the listing until you remove that line."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Scaffold",
+    "section": "",
+    "text": "Everything here is a stage in one loop: an agent acts, an environment verifies, a signal updates the agent, and the loop eventually closes on itself. Four pillars, one per stage. Every entry is tagged with the pillar it belongs to.\n\n\nThe agent loop itself: tool calling, memory, skills as procedural memory, subagent delegation, MCP, context management. Anchor project: Annulus — a local-first agentic platform whose MVP is software engineering and whose roadmap is a general platform for science and engineering. Reference implementations read against: Hermes Agent, Claude Code, autoresearch.\n\n\n\nTask specification, reward design, eval harnesses, and the question of what counts as evidence that a system works. Anchor artifact: Tesseract as a verifiers environment, published to the Environments Hub. Governing rule for this pillar and the whole notebook: no claim without a rerunnable eval.\n\n\n\nTurning verified signal into a better policy. Two legs that are deliberately distinct skill trees:\n\nClassical deep RL — the thesis: an AlphaZero/MuZero-lineage self-play agent for Tesseract, from environment through truncated training to full-game self-play.\nLLM post-training — GRPO/RLVR via TRL, prime-rl, Tinker, and Atropos.\n\nThe bridge between them is the shared Tesseract environment, which lets the same task be attacked by both pipelines and compared honestly.\n\n\n\nRecursive self-improvement and agentic science: evolutionary program search, open-ended multi-agent discovery, autonomous research loops, formal-math agents. The specific question carried into this pillar from prior work: is catastrophic forgetting the binding constraint on weight-updating self-improvement, and if so does that argue for skill- and memory-based improvement instead?"
+  },
+  {
+    "objectID": "about.html#the-loop",
+    "href": "about.html#the-loop",
+    "title": "Scaffold",
+    "section": "",
+    "text": "Everything here is a stage in one loop: an agent acts, an environment verifies, a signal updates the agent, and the loop eventually closes on itself. Four pillars, one per stage. Every entry is tagged with the pillar it belongs to.\n\n\nThe agent loop itself: tool calling, memory, skills as procedural memory, subagent delegation, MCP, context management. Anchor project: Annulus — a local-first agentic platform whose MVP is software engineering and whose roadmap is a general platform for science and engineering. Reference implementations read against: Hermes Agent, Claude Code, autoresearch.\n\n\n\nTask specification, reward design, eval harnesses, and the question of what counts as evidence that a system works. Anchor artifact: Tesseract as a verifiers environment, published to the Environments Hub. Governing rule for this pillar and the whole notebook: no claim without a rerunnable eval.\n\n\n\nTurning verified signal into a better policy. Two legs that are deliberately distinct skill trees:\n\nClassical deep RL — the thesis: an AlphaZero/MuZero-lineage self-play agent for Tesseract, from environment through truncated training to full-game self-play.\nLLM post-training — GRPO/RLVR via TRL, prime-rl, Tinker, and Atropos.\n\nThe bridge between them is the shared Tesseract environment, which lets the same task be attacked by both pipelines and compared honestly.\n\n\n\nRecursive self-improvement and agentic science: evolutionary program search, open-ended multi-agent discovery, autonomous research loops, formal-math agents. The specific question carried into this pillar from prior work: is catastrophic forgetting the binding constraint on weight-updating self-improvement, and if so does that argue for skill- and memory-based improvement instead?"
+  },
+  {
+    "objectID": "about.html#how-entries-work",
+    "href": "about.html#how-entries-work",
+    "title": "Scaffold",
+    "section": "How entries work",
+    "text": "How entries work\n\nEvery entry is tagged with one or more pillars.\nNumbers come from a harness that reruns. Figures are generated by code in the entry, cached via Quarto’s freeze.\nNegative results and dead ends get entries too. They are the point of a notebook.\nDrafts live in the repo with draft: true and do not appear in the listing."
+  },
+  {
+    "objectID": "about.html#related-repositories",
+    "href": "about.html#related-repositories",
+    "title": "Scaffold",
+    "section": "Related repositories",
+    "text": "Related repositories\n\n\n\n\n\n\n\n\nRepo\nPillar\nWhat\n\n\n\n\nannulus\nR\nLocal-first agentic platform\n\n\ntesseract-env\nE\nverifiers environment, published to the Environments Hub\n\n\ntesseract-agent\nT\nSelf-play agent (thesis)"
+  }
+]

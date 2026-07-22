@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>lab</title>
+<link>https://johngrahamreynolds.github.io/lab/</link>
+<atom:link href="https://johngrahamreynolds.github.io/lab/index.xml" rel="self" type="application/rss+xml"/>
+<description>Personal research lab notebook — agent runtimes, RL environments, training, and self-improving systems.</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Wed, 22 Jul 2026 16:39:39 GMT</lastBuildDate>
+</channel>
+</rss>
