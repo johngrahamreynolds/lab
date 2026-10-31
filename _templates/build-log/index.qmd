@@ -1,0 +1,23 @@
+---
+title: "PROJECT: build log, MILESTONE"
+description: "What now works, and the decision that shaped it."
+date: 2026-01-01
+categories: [E, PROJECT, build-log]
+draft: true
+bibliography: ../../references.bib
+---
+
+::: {.callout-note}
+Companion repo: [`PROJECT@COMMIT`](https://github.com/johngrahamreynolds/PROJECT/tree/COMMIT).
+Drafts the paper's **Methods**.
+:::
+
+## What works now
+
+## The decision that mattered
+
+Link the ADR. What was the alternative, and why not?
+
+## What surprised me
+
+## Next

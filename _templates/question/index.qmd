@@ -1,0 +1,29 @@
+---
+title: "PROJECT: the question"
+description: "One sentence: the question, in plain words."
+date: 2026-01-01
+categories: [T, PROJECT, question]
+draft: true
+bibliography: ../../references.bib
+---
+
+::: {.callout-note}
+Companion repo: [`PROJECT@COMMIT`](https://github.com/johngrahamreynolds/PROJECT/tree/COMMIT).
+Drafts the paper's **Introduction**.
+:::
+
+## What I noticed playing it
+
+## What is open
+
+What the closest two or three papers do, and exactly where they stop.
+
+## The question
+
+- **Question:**
+- **Hypothesis:**
+- **What would change my mind:**
+
+## The smallest test
+
+## Why it matters beyond this game

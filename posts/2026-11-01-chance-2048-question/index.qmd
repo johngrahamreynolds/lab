@@ -1,0 +1,95 @@
+---
+title: "When does modeling chance pay off?"
+description: "A controlled study of learned world models on 2048, with the game's randomness as the one variable I turn."
+date: 2026-11-01
+categories: [T, chance-2048, question]
+draft: true
+bibliography: ../../references.bib
+---
+
+::: {.callout-note}
+Companion repo: [`chance-2048`](https://github.com/johngrahamreynolds/chance-2048)
+(link the commit once pushed). Drafts the paper's **Introduction**.
+:::
+
+## What I noticed playing it
+
+I played 2048 for the first time this month. My best was a single 512 tile.
+<!-- Your notes from QUESTION.md: what the random spawns did to your plans. -->
+
+## What is open
+
+MuZero plans with a learned model of its environment, and it assumes that
+model is deterministic. Stochastic MuZero adds explicit chance nodes: after
+each move, the model predicts a distribution over what the world might do
+next, and the search plans over it. On 2048, the game it was built for, it
+does well.
+
+The open part is *when* that extra machinery pays off. The LightZero benchmark
+found only a marginal gain over plain MuZero at moderate randomness, and a
+shrinking one as randomness grows. Nobody has turned randomness into a
+controlled variable and measured the gap along it. And LightZero's published
+2048 setup hands the agent the true chance outcome rather than making it learn
+one, so whether the learned chance model recovers the real randomness is
+untested too.
+
+## The question
+
+- **Question:** when does explicit chance modeling pay off for planning with a
+  learned world model?
+- **Hypothesis:** the benefit peaks at intermediate randomness. With none,
+  there is nothing to model; with a lot, luck swamps planning.
+- **What would change my mind:** a gap that grows steadily with randomness, or
+  no gap at any level beyond seed noise.
+
+## The knob
+
+The new tile after each move is the only randomness in 2048, so I control it
+directly with four spawn rules, from fully deterministic to a coin flip
+between a 2 and a 4.
+
+| Level | Where the tile goes | Value |
+|---|---|---|
+| S0 | first empty cell | always 2 |
+| S1 | uniformly random empty cell | always 2 |
+| S2 | uniformly random empty cell | 4 with probability 0.1 (the real game) |
+| S3 | uniformly random empty cell | 4 with probability 0.5 |
+
+With $k$ empty cells, the entropy of one spawn is $0$, $\log_2 k$,
+$\log_2 k + H(0.1)$, and $\log_2 k + 1$ bits:
+
+```{python}
+#| label: fig-entropy
+#| fig-cap: "Entropy of one tile spawn under each rule, as the board fills up."
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def h(p):
+    return 0.0 if p in (0.0, 1.0) else -(p * np.log2(p) + (1 - p) * np.log2(1 - p))
+
+k = np.arange(1, 17)
+levels = {"S0": np.zeros_like(k, float), "S1": np.log2(k),
+          "S2": np.log2(k) + h(0.1), "S3": np.log2(k) + h(0.5)}
+fig, ax = plt.subplots(figsize=(6, 3.5))
+for name, bits in levels.items():
+    ax.plot(k, bits, marker="o", markersize=3, label=name)
+ax.set_xlabel("empty cells on the board")
+ax.set_ylabel("spawn entropy (bits)")
+ax.legend(frameon=False)
+plt.tight_layout()
+```
+
+## The smallest test
+
+Stochastic MuZero against MuZero at S0 and S2, three seeds each, at one fixed
+budget of environment steps. The full study adds S1 and S3, an oracle arm
+given the true chance outcome, a model-free baseline (PPO), and a world-model
+agent without search (DreamerV3).
+
+## Why it matters beyond this game
+
+Dispatching, routing, and scheduling all act and then face a random response.
+Whether to spend model capacity on that randomness is the same question at a
+larger scale. It is also the next project's question: in Tesseract, a
+cooperative board game, every revealed die is a chance node.
