@@ -64,3 +64,5 @@ improvement instead?
 | `annulus` | R | Local-first agentic platform |
 | `tesseract-env` | E | `verifiers` environment, published to the Environments Hub |
 | `tesseract-agent` | T | Self-play agent (thesis) |
+| `chance-2048` | T | When chance modeling pays off: Stochastic MuZero vs MuZero across controlled randomness |
+| `research-project-template` | — | Shared machinery every project repo is generated from |

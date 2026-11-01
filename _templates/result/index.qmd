@@ -1,0 +1,43 @@
+---
+title: "PROJECT: RESULT IN ONE LINE"
+description: "The finding, with its number."
+date: 2026-01-01
+categories: [T, PROJECT, result]
+draft: true
+bibliography: ../../references.bib
+---
+
+::: {.callout-note}
+Companion repo: [`PROJECT@COMMIT`](https://github.com/johngrahamreynolds/PROJECT/tree/COMMIT),
+experiment `E00X`. Runs: [run records](https://huggingface.co/datasets/johngrahamreynolds/PROJECT-runs).
+Drafts a subsection of the paper's **Results**.
+:::
+
+## The finding
+
+One paragraph. Lead with the number.
+
+```{python}
+#| label: fig-result
+#| fig-cap: "Replace with what the figure shows."
+#| echo: false
+# summary.csv is exported by the project's analysis/ script and copied next to
+# this post, so the notebook never needs the full run data or a GPU.
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("summary.csv")
+fig, ax = plt.subplots(figsize=(6, 3.5))
+# ax.errorbar(df["x"], df["mean"], yerr=[df["mean"] - df["lo"], df["hi"] - df["mean"]], fmt="o-")
+ax.set_xlabel("")
+ax.set_ylabel("")
+plt.tight_layout()
+```
+
+## How it was measured
+
+Arms, seeds, budget, and the evaluation protocol, in a few lines.
+
+## What it means
+
+## Caveats

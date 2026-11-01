@@ -1,0 +1,24 @@
+---
+title: "PROJECT: WHAT DID NOT WORK"
+description: "What I tried, what happened, and what it rules out."
+date: 2026-01-01
+categories: [T, PROJECT, negative-result]
+draft: true
+bibliography: ../../references.bib
+---
+
+::: {.callout-note}
+Companion repo: [`PROJECT@COMMIT`](https://github.com/johngrahamreynolds/PROJECT/tree/COMMIT),
+experiment `E00X`.
+Drafts a limitation or a paragraph of the paper's **Discussion**.
+:::
+
+## What I expected
+
+## What happened
+
+The number, and the runs behind it.
+
+## Why, as far as I can tell
+
+## What this rules out
